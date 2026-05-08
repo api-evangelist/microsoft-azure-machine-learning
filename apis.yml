@@ -34,6 +34,8 @@ apis:
       - Model Deployment
       - Model Training
     properties:
+      - url: openapi/microsoft-azure-machine-learning-openapi.yml
+        type: OpenAPI
       - type: Documentation
         url: https://learn.microsoft.com/en-us/azure/machine-learning/
       - type: APIReference
