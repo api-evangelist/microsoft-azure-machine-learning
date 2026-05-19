@@ -1,0 +1,229 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Machine Learning REST API — Workspaces
+  description: 'Azure Machine Learning REST API — Workspaces. 6 operations. Lead operation: Azure Machine Learning REST API
+    List by subscription. Self-contained Naftiko capability covering one Microsoft Azure Machine Learning business surface.'
+  tags:
+  - Microsoft Azure Machine Learning
+  - Workspaces
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_MACHINE_LEARNING_API_KEY: MICROSOFT_AZURE_MACHINE_LEARNING_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-azure-machine-learning-workspaces
+    baseUri: https://management.azure.com
+    description: Azure Machine Learning REST API — Workspaces business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-providers-Microsoft.MachineLearningServices-workspa
+      path: /subscriptions/{subscriptionId}/providers/Microsoft.MachineLearningServices/workspaces
+      operations:
+      - name: listworkspacesbysubscription
+        method: GET
+        description: Azure Machine Learning REST API List by subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces
+      operations:
+      - name: listworkspacesbyresourcegroup
+        method: GET
+        description: Azure Machine Learning REST API List by resource group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{name}
+      operations:
+      - name: getworkspaces
+        method: GET
+        description: Azure Machine Learning REST API Get resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createorupdateworkspaces
+        method: PUT
+        description: Azure Machine Learning REST API Create or update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updateworkspaces
+        method: PATCH
+        description: Azure Machine Learning REST API Update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteworkspaces
+        method: DELETE
+        description: Azure Machine Learning REST API Delete resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_MACHINE_LEARNING_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-azure-machine-learning-workspaces-rest
+    port: 8080
+    description: REST adapter for Azure Machine Learning REST API — Workspaces. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/providers/microsoft-machinelearningservices/workspaces
+      name: subscriptions-subscriptionid-providers-microsoft-machinelearningservices-workspa
+      description: REST surface for subscriptions-subscriptionId-providers-Microsoft.MachineLearningServices-workspa.
+      operations:
+      - method: GET
+        name: listworkspacesbysubscription
+        description: Azure Machine Learning REST API List by subscription
+        call: microsoft-azure-machine-learning-workspaces.listworkspacesbysubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-machinelearningservices/workspaces
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: listworkspacesbyresourcegroup
+        description: Azure Machine Learning REST API List by resource group
+        call: microsoft-azure-machine-learning-workspaces.listworkspacesbyresourcegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-machinelearningservices/workspaces/{name}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: getworkspaces
+        description: Azure Machine Learning REST API Get resource
+        call: microsoft-azure-machine-learning-workspaces.getworkspaces
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: createorupdateworkspaces
+        description: Azure Machine Learning REST API Create or update resource
+        call: microsoft-azure-machine-learning-workspaces.createorupdateworkspaces
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateworkspaces
+        description: Azure Machine Learning REST API Update resource
+        call: microsoft-azure-machine-learning-workspaces.updateworkspaces
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteworkspaces
+        description: Azure Machine Learning REST API Delete resource
+        call: microsoft-azure-machine-learning-workspaces.deleteworkspaces
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-azure-machine-learning-workspaces-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Machine Learning REST API — Workspaces. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: azure-machine-learning-rest-api
+      description: Azure Machine Learning REST API List by subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-machine-learning-workspaces.listworkspacesbysubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-machine-learning-rest-api-2
+      description: Azure Machine Learning REST API List by resource group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-machine-learning-workspaces.listworkspacesbyresourcegroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-machine-learning-rest-api-3
+      description: Azure Machine Learning REST API Get resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-machine-learning-workspaces.getworkspaces
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-machine-learning-rest-api-4
+      description: Azure Machine Learning REST API Create or update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-machine-learning-workspaces.createorupdateworkspaces
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-machine-learning-rest-api-5
+      description: Azure Machine Learning REST API Update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-machine-learning-workspaces.updateworkspaces
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-machine-learning-rest-api-6
+      description: Azure Machine Learning REST API Delete resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-azure-machine-learning-workspaces.deleteworkspaces
+      outputParameters:
+      - type: object
+        mapping: $.
