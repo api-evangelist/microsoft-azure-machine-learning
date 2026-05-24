@@ -113,3 +113,5 @@ common:
       description: Automate ML workflows with GitHub Actions for training and deployment automation.
     - name: Power BI
       description: Consume ML model predictions in Power BI dashboards and reports.
+  - type: LLMsTxt
+    url: https://portal.azure.com/llms.txt
