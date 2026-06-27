@@ -44,10 +44,10 @@ apis:
         url: https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources
       - type: Pricing
         url: https://azure.microsoft.com/en-us/pricing/details/machine-learning/
-      - type: SDK
+      - type: SDKs
         url: https://learn.microsoft.com/en-us/python/api/overview/azure/ai-ml-readme
         title: Python SDK v2
-      - type: SDK
+      - type: SDKs
         url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.machinelearning-readme
         title: .NET SDK
     contact:
@@ -113,5 +113,5 @@ common:
         description: Automate ML workflows with GitHub Actions for training and deployment automation.
       - name: Power BI
         description: Consume ML model predictions in Power BI dashboards and reports.
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://portal.azure.com/llms.txt
