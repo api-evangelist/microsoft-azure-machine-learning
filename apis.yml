@@ -57,6 +57,10 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: DomainSecurity
+    url: security/microsoft-azure-machine-learning-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-azure-machine-learning-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-azure-machine-learning-scopes.yml
   - type: GitHubOrganization
