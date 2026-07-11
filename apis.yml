@@ -57,6 +57,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: OAuthScopes
+    url: scopes/microsoft-azure-machine-learning-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/Azure
   - type: Portal
