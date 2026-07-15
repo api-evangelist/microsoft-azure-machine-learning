@@ -57,6 +57,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/microsoft-azure-machine-learning-agentic-access.yml
   - type: DomainSecurity
     url: security/microsoft-azure-machine-learning-domain-security.yml
   - type: Authentication
