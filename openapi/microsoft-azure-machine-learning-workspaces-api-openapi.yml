@@ -1,55 +1,18 @@
 openapi: 3.1.0
 info:
-  title: Azure Machine Learning REST API
-  description: Azure Machine Learning lets data scientists and developers build, train, and deploy machine
-    learning models. The REST API manages workspaces, models, endpoints, deployments, jobs, datasets,
-    and compute.
+  title: Azure Machine Learning REST Operations Workspaces API
+  description: Azure Machine Learning lets data scientists and developers build, train, and deploy machine learning models. The REST API manages workspaces, models, endpoints, deployments, jobs, datasets, and compute.
   version: '2024-01-01'
-externalDocs:
-  description: Azure Machine Learning REST API Documentation
-  url: https://learn.microsoft.com/en-us/azure/machine-learning/
 servers:
 - url: https://management.azure.com
   description: Azure Resource Manager
-tags:
-- name: Workspaces
-  description: Workspaces operations
-- name: Models
-  description: Models operations
-- name: Endpoints
-  description: Endpoints operations
-- name: Jobs
-  description: Jobs operations
-- name: Compute
-  description: Compute operations
-- name: Operations
-  description: Operations operations
 security:
 - azure_auth:
   - user_impersonation
+tags:
+- name: Workspaces
+  description: Workspaces operations
 paths:
-  /providers/Microsoft.MachineLearningServices/operations:
-    get:
-      operationId: listOperations
-      summary: Azure Machine Learning REST API List operations
-      description: Lists all available REST API operations for Microsoft.MachineLearningServices.
-      tags:
-      - Operations
-      parameters:
-      - $ref: '#/components/parameters/apiVersion'
-      responses:
-        '200':
-          description: Operations list
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OperationList'
-        default:
-          description: Error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
   /subscriptions/{subscriptionId}/providers/Microsoft.MachineLearningServices/workspaces:
     get:
       operationId: listWorkspacesBySubscription
@@ -206,51 +169,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
-  parameters:
-    subscriptionId:
-      name: subscriptionId
-      in: path
-      required: true
-      description: The ID of the target subscription.
-      schema:
-        type: string
-    resourceGroupName:
-      name: resourceGroupName
-      in: path
-      required: true
-      description: The name of the resource group.
-      schema:
-        type: string
-    apiVersion:
-      name: api-version
-      in: query
-      required: true
-      description: The API version to use for this operation.
-      schema:
-        type: string
   schemas:
-    Resource:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Resource ID.
-        name:
-          type: string
-          description: Resource name.
-        type:
-          type: string
-          description: Resource type.
-        location:
-          type: string
-          description: Resource location.
-        tags:
-          type: object
-          additionalProperties:
-            type: string
-        properties:
-          type: object
-          description: Resource-specific properties.
     ResourceList:
       type: object
       properties:
@@ -273,33 +192,50 @@ components:
               type: string
             target:
               type: string
-    Operation:
+    Resource:
       type: object
       properties:
+        id:
+          type: string
+          description: Resource ID.
         name:
           type: string
-        display:
-          type: object
-          properties:
-            provider:
-              type: string
-            resource:
-              type: string
-            operation:
-              type: string
-            description:
-              type: string
-        isDataAction:
-          type: boolean
-    OperationList:
-      type: object
-      properties:
-        value:
-          type: array
-          items:
-            $ref: '#/components/schemas/Operation'
-        nextLink:
+          description: Resource name.
+        type:
           type: string
+          description: Resource type.
+        location:
+          type: string
+          description: Resource location.
+        tags:
+          type: object
+          additionalProperties:
+            type: string
+        properties:
+          type: object
+          description: Resource-specific properties.
+  parameters:
+    subscriptionId:
+      name: subscriptionId
+      in: path
+      required: true
+      description: The ID of the target subscription.
+      schema:
+        type: string
+    resourceGroupName:
+      name: resourceGroupName
+      in: path
+      required: true
+      description: The name of the resource group.
+      schema:
+        type: string
+    apiVersion:
+      name: api-version
+      in: query
+      required: true
+      description: The API version to use for this operation.
+      schema:
+        type: string
   securitySchemes:
     azure_auth:
       type: oauth2
@@ -309,5 +245,8 @@ components:
           authorizationUrl: https://login.microsoftonline.com/common/oauth2/authorize
           scopes:
             user_impersonation: Impersonate your user account
+externalDocs:
+  description: Azure Machine Learning REST API Documentation
+  url: https://learn.microsoft.com/en-us/azure/machine-learning/
 x-generated-from: https://learn.microsoft.com/en-us/azure/machine-learning/
 x-generated-by: claude-crawl-2026-05-08
