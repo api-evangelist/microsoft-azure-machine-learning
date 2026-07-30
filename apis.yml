@@ -3,6 +3,19 @@ description: >-
   Azure Machine Learning is an enterprise-grade cloud service for building, training, deploying, and managing machine
   learning models. It supports the full ML lifecycle including data preparation, model training, evaluation, deployment,
   and monitoring with MLOps capabilities.
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://azure.microsoft.com/svghandler/machine-learning/
 url: https://azure.microsoft.com/en-us/services/machine-learning/
 created: '2026-03-13'
@@ -16,43 +29,56 @@ tags:
   - Model Deployment
   - Model Training
 apis:
-  - aid: microsoft-azure-machine-learning:rest-api
-    name: Azure Machine Learning REST API
-    description: >-
-      Azure Machine Learning REST API provides management of ML workspaces, compute resources, datasets, experiments,
-      models, and endpoints. It supports the full ML lifecycle including data preparation, model training, evaluation,
-      deployment, and monitoring.
-    image: https://azure.microsoft.com/svghandler/machine-learning/
-    humanURL: https://learn.microsoft.com/en-us/rest/api/azureml/
-    baseURL: https://management.azure.com
-    tags:
-      - AI
-      - Machine Learning
-      - MLOps
-      - Model Deployment
-      - Model Training
-    properties:
-      - url: openapi/microsoft-azure-machine-learning-openapi.yml
-        type: OpenAPI
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/azure/machine-learning/
-      - type: APIReference
-        url: https://learn.microsoft.com/en-us/rest/api/azureml/
-      - type: Authentication
-        url: https://learn.microsoft.com/en-us/rest/api/azure/
-      - type: GettingStarted
-        url: https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources
-      - type: Pricing
-        url: https://azure.microsoft.com/en-us/pricing/details/machine-learning/
-      - type: SDKs
-        url: https://learn.microsoft.com/en-us/python/api/overview/azure/ai-ml-readme
-        title: Python SDK v2
-      - type: SDKs
-        url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.machinelearning-readme
-        title: .NET SDK
-    contact:
-      - type: Support
-        url: https://azure.microsoft.com/en-us/support/
+- aid: microsoft-azure-machine-learning:microsoft-azure-machine-learning-operations-api
+  name: Azure Machine Learning Operations API
+  description: Operations operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/azureml/
+  baseURL: https://management.azure.com
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-machine-learning-operations-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/machine-learning/
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/rest/api/azureml/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/machine-learning/
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/python/api/overview/azure/ai-ml-readme
+  - type: SDKs
+    url: >-
+      https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.machinelearning-readme
+- aid: microsoft-azure-machine-learning:microsoft-azure-machine-learning-workspaces-api
+  name: Azure Machine Learning Workspaces API
+  description: Workspaces operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/azureml/
+  baseURL: https://management.azure.com
+  tags:
+  - Workspaces
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-machine-learning-workspaces-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/machine-learning/
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/rest/api/azureml/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: https://learn.microsoft.com/en-us/azure/machine-learning/quickstart-create-resources
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/machine-learning/
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/python/api/overview/azure/ai-ml-readme
+  - type: SDKs
+    url: >-
+      https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.machinelearning-readme
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
