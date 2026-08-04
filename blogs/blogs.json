@@ -9,13 +9,6 @@
       "method": "feed"
     },
     {
-      "source": "https://techcommunity.microsoft.com/tag/azure%20machine%20learning",
-      "feed_url": "https://techcommunity.microsoft.com/tag/azure%20machine%20learning",
-      "title": "",
-      "saved": 0,
-      "method": "none"
-    },
-    {
       "source": "https://status.azure.com/feed/",
       "feed_url": "https://status.azure.com/feed/",
       "title": "",
@@ -30,6 +23,6 @@
       "method": "discovered"
     }
   ],
-  "post_count": 37,
-  "fetched": "2026-07-11T11:50:51Z"
+  "post_count": 41,
+  "fetched": "2026-08-01T15:49:00Z"
 }

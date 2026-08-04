@@ -1,0 +1,16 @@
+{
+  "provider": "microsoft-azure-machine-learning",
+  "sources": [
+    "microsoft-azure-machine-learning-operations-api-openapi.yml",
+    "microsoft-azure-machine-learning-workspaces-api-openapi.yml"
+  ],
+  "outputs": [
+    "microsoft-azure-machine-learning-operations-api-openapi.yml",
+    "microsoft-azure-machine-learning-workspaces-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
