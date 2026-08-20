@@ -22,6 +22,13 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
+  - Artificial Intelligence
+  - Azure
+  - Machine-Learning
+  - MLOps
+  - Model Deployment
+  - Model Training
+tags_raw:
   - AI
   - Azure
   - Machine Learning
@@ -34,7 +41,8 @@ apis:
   description: Operations operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/azureml/
   baseURL: https://management.azure.com
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
