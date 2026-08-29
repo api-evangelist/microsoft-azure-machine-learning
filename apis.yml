@@ -3,6 +3,18 @@ description: >-
   Azure Machine Learning is an enterprise-grade cloud service for building, training, deploying, and managing machine
   learning models. It supports the full ML lifecycle including data preparation, model training, evaluation, deployment,
   and monitoring with MLOps capabilities.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
