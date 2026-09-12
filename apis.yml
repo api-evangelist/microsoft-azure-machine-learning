@@ -103,6 +103,8 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: Website
+    url: https://www.microsoft.com/
   - type: AgenticAccess
     url: agentic-access/microsoft-azure-machine-learning-agentic-access.yml
   - type: DomainSecurity
@@ -169,3 +171,5 @@ common:
         description: Consume ML model predictions in Power BI dashboards and reports.
   - type: LlmsText
     url: https://portal.azure.com/llms.txt
+x-parent: microsoft-azure
+x-relationship: product
