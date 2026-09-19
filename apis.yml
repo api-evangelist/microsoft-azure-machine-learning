@@ -80,6 +80,8 @@ apis:
   humanURL: https://learn.microsoft.com/en-us/rest/api/azureml/
   baseURL: https://management.azure.com
   tags:
+  - Workspace
+  tags_raw:
   - Workspaces
   properties:
   - type: OpenAPI
