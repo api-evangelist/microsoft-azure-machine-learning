@@ -106,6 +106,9 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: CapabilityMap
+    url: capabilities/microsoft-azure-machine-learning-capability-edges.yml
+    name: Azure Machine Learning Business Capability Map
   - type: Website
     url: https://www.microsoft.com/
   - type: AgenticAccess

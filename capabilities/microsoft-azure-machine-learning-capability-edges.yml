@@ -1,0 +1,27 @@
+slug: microsoft-azure-machine-learning
+provider: Azure Machine Learning
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Workspaces
+  spec_file: microsoft-azure-machine-learning-workspaces-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.7
+  evidence: '''Azure Machine Learning lets data scientists and developers build, train, and deploy machine
+    learning models. The REST API manages workspaces, models, endpoints, deployments, jobs, datasets,
+    and compute.'''
+  reason: The resource managed is the ML workspace that hosts model training and deployment, supporting
+    the AI/ML model lifecycle (MLOps). Operations themselves are generic resource CRUD, so confidence
+    is moderate rather than high.
