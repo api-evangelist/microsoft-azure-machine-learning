@@ -1,9 +1,11 @@
 {
   "provider": "microsoft-azure-machine-learning",
   "sources": [
+    "_original/microsoft-azure-machine-learning-openapi.json",
     "_ae-authored/microsoft-azure-machine-learning-openapi.yml"
   ],
   "outputs": [
+    "microsoft-azure-machine-learning-webapps-api-openapi.yml",
     "microsoft-azure-machine-learning-operations-api-openapi.yml",
     "microsoft-azure-machine-learning-workspaces-api-openapi.yml"
   ],
@@ -11,9 +13,11 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "microsoft-azure-machine-learning-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "microsoft-azure-machine-learning-openapi.json: declared missing tag: WebApps",
     "microsoft-azure-machine-learning-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "apis.yml register: written (+1 apis, 3 total)"
   ],
   "skipped": [
     "microsoft-azure-machine-learning-operations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
